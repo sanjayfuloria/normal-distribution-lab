@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #FDF6EC;
+  --ink: #1A1A2E;
+  --accent: #E94560;
+  --gold: #D4A853;
+  --slate: #2C3E50;
+  --sage: #4A7C59;
+  --paper: #FAF3E0;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background-color: var(--cream);
+  color: var(--ink);
+  line-height: 1.7;
+  margin: 0;
+}
+h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+code, pre { font-family: 'JetBrains Mono', monospace; }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+
+input[type="range"] {
+  -webkit-appearance: none; appearance: none;
+  width: 100%; height: 6px; border-radius: 3px;
+  background: #d3c5a8; outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--accent); cursor: pointer;
+  border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.15s;
+}
+input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
+input[type="range"]::-moz-range-thumb {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--accent); cursor: pointer;
+  border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.katex { font-size: 1.1em !important; }
+.katex-display { overflow-x: auto; overflow-y: hidden; padding: 8px 0; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-in { animation: fadeInUp 0.6s ease-out forwards; }
+
+.code-block { background: #1e293b; border-radius: 12px; overflow: hidden; }
+.code-block pre { padding: 1.25rem; overflow-x: auto; font-size: 0.85rem; line-height: 1.6; }
+
+.quiz-option { transition: all 0.2s; cursor: pointer; }
+.quiz-option:hover { transform: translateX(4px); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.quiz-correct { background: #d1fae5 !important; border-color: #059669 !important; }
+.quiz-wrong { background: #fee2e2 !important; border-color: #dc2626 !important; }
